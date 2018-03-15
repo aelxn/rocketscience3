@@ -2,7 +2,7 @@ from ggrocket import Rocket, Planet
 from math import radians, sqrt, log
 from ggmath import InputButton, Timer
 
-earth = Planet()  # no gravity to simplify things
+earth = Planet(color=0xFF61C8)  # no gravity to simplify things
 
 RocketStarted = False
 StartTime = None    # to keep track of when burn started
@@ -60,7 +60,7 @@ def GetMass():
 
 # Create a button for starting the simulation
 # Physical positioning at 10,400 pixels, calls the StartRocket function
-start = InputButton((10,400), "START", StartRocket, positioning="physical", size=15)
+start = InputButton((15,450), "START", StartRocket, positioning="physical", size=15)
 
 #Create and "run" the rocket
 rocket = Rocket(earth, thrust=GetThrust, mass=GetMass)
